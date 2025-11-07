@@ -10,7 +10,7 @@ import shutil
 import stat
 import argparse
 from pathlib import Path
-from typing import Set, Tuple
+from typing import Optional, Set, Tuple
 
 
 def get_relative_paths(root: Path, follow_symlinks: bool = False) -> Set[Path]:
@@ -111,7 +111,7 @@ def sync_directories(
     destination: Path,
     verbose: bool = True,
     dry_run: bool = False,
-    exclude_patterns: Set[str] | None = None,
+    exclude_patterns: Optional[Set[str]] = None,
     time_tolerance: float = 2.0,
 ) -> Tuple[int, int, int, int]:
     """
@@ -566,3 +566,4 @@ Examples:
 
 if __name__ == "__main__":
     main()
+
